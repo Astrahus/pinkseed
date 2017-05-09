@@ -1,7 +1,7 @@
 language: node_js
 node_js:
   - "iojs"
-  - "7.7.x"
+  - "7.8.0"
 env:
   ENVIRONMENT=PRODUCTION
 notifications:
