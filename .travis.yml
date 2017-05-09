@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - "iojs"
+  - "7.7.x"
+env:
+  ENVIRONMENT=PRODUCTION
+notifications:
+  email:
+    recipients:
+      - adbovenzo@gmail.com
+    on_success: always
+    on_failure: always
+  slack:
+    rooms:
+      - pinkbit:wSmjgkF2TQJZLL1ytrmNzu9H#devops
+    template:
+      - "Build : %{repository_name} (%{commit}) -> %{author}: %{commit_subject} "
+      - "Build Details: %{build_url}"
+      - "Result: %{result} - Duration: %{duration}"
+    on_success: always
+    on_failure: always
+
+before_install:
+  - "npm install"
+
