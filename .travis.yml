@@ -16,8 +16,8 @@ notifications:
       - "Build : %{repository_name} (%{commit}) -> %{author}: %{commit_subject} "
       - "Build Details: %{build_url}"
       - "Result: %{result} - Duration: %{duration}"
-    on_success: always
-    on_failure: always
+  on_success: always
+  on_failure: always
 
 before_install:
   - "npm install"
