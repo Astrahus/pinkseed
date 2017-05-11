@@ -1,12 +1,14 @@
-import 'react-native';
+import test from 'ava';
+
 import React from 'react';
+
+import {shallow} from 'enzyme';
+
 import Index from '../index.ios.js';
 
-// Note: test renderer must be required after react-native.
-import renderer from 'react-test-renderer';
+test('Composição da Index de iOS', t => {
+  const indexWrapper = shallow(<Index />);
 
-it('renders correctly', () => {
-  const tree = renderer.create(
-    <Index />
-  );
+  t.is(indexWrapper.name(),'View');
+
 });
