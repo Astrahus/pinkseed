@@ -4,43 +4,18 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "ava"
-  },
-  "ava": {
-    "files": [
-      "./__tests__/**/*.js",
-      "!./__tests__/_setup.js"
-    ],
-    "powerAssert": false,
-    "require": [
-      "babel-register",
-      "babel-polyfill",
-      "./__tests__/_setup",
-      "react-native-mock/mock"
-    ],
-    "babel": "inherit"
+    "test": "jest"
   },
   "dependencies": {
-    "react": "^15.5.0-rc.2",
-    "react-dom": "^15.5.0-rc.2",
-    "react-native": "0.43.0",
-    "redux": "^3.6.0",
-    "redux-saga": "^0.15.3"
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.44.0"
   },
   "devDependencies": {
     "ava": "^0.19.1",
     "babel-jest": "20.0.0",
     "babel-preset-react-native": "1.9.1",
-    "enzyme": "^2.8.2",
     "jest": "20.0.0",
-    "mockery": "^2.0.0",
-    "nyc": "^10.3.2",
-    "react-addons-test-utils": "^15.5.1",
-    "react-dom": "^15.5.4",
-    "react-native-mock": "^0.3.1",
-    "react-test-renderer": "^15.5.0",
-    "remote-redux-devtools": "^0.5.10",
-    "tap-nyan": "^1.1.0"
+    "react-test-renderer": "16.0.0-alpha.6"
   },
   "jest": {
     "preset": "react-native"

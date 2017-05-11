@@ -22,8 +22,3 @@ notifications:
 before_install:
   - "npm install"
 
-after_success:
-	- './node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls'
-  
-service_name: travis-pro
-repo_token: jFKOVuM3TUVpsvZZ6NQiR4faKvg0JOCLM

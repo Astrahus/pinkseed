@@ -1,13 +1,12 @@
-import test from 'ava';
+import 'react-native';
 import React from 'react';
-import {shallow, mount} from 'enzyme';
-
 import Index from '../index.android.js';
 
+// Note: test renderer must be required after react-native.
+import renderer from 'react-test-renderer';
 
-test('Composição da Index de android', t => {
-  const indexWrapper = shallow(<Index />);
-
-  t.is(indexWrapper.name(),'View');
-
+it('renders correctly', () => {
+  const tree = renderer.create(
+    <Index />
+  );
 });
