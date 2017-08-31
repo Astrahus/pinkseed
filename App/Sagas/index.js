@@ -1,4 +1,4 @@
-import { takeLatest, takeEvery } from 'redux-saga/effects';
+import { takeLatest, takeEvery, all } from 'redux-saga/effects';
 
 /* ------------- Types ------------- */
 
@@ -17,8 +17,8 @@ import { helloWorld } from './SampleSagas'
 /* ------------- Connect Types To Sagas ------------- */
 
 export default function * root () {
-  yield [
+  yield all([
     // some sagas only receive an action
     takeLatest(ReduxSampleTypes.HELLO_WORLD, helloWorld)
-  ]
+  ])
 }

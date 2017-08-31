@@ -10,7 +10,6 @@ import Styles from './Styles/CounterStyles';
 
 import SampleActions from '../Redux/ReduxSample';
 
-
 class Counter extends Component{ 
 
     static PropTypes = {
@@ -28,6 +27,9 @@ class Counter extends Component{
     handlePressDecrement = () => {
         this.props.decrement();
     }
+    handlePressHello = () =>{
+        this.props.hello();
+    }
 
     render () {
         const { counter: number} = this.props;
@@ -37,12 +39,17 @@ class Counter extends Component{
                 <TouchableHighlight
                     onPress={this.handlePressIncrement}
                     style={Styles.button}>
-                    <Text style={Styles.buttonText}> Increment</Text>
+                    <Text style={Styles.buttonText}>Increment</Text>
                 </TouchableHighlight>
                 <TouchableHighlight
                     onPress={this.handlePressDecrement}
                     style={Styles.button}>
-                    <Text style={Styles.buttonText}> Decrement</Text>
+                    <Text style={Styles.buttonText}>Decrement</Text>
+                </TouchableHighlight>
+                <TouchableHighlight
+                    onPress={this.handlePressHello}
+                    style={Styles.button}>
+                    <Text style={Styles.buttonText}>Hello?</Text>
                 </TouchableHighlight>
             </View>
         )
@@ -58,7 +65,8 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) =>{
     return {
         increment : ()  =>  dispatch(SampleActions.increment()),
-        decrement : ()  =>  dispatch(SampleActions.decrement())
+        decrement : ()  =>  dispatch(SampleActions.decrement()),
+        hello : ()  =>  dispatch(SampleActions.helloWorld())
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);

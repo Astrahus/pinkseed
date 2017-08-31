@@ -16,8 +16,10 @@ const INITIAL_STATE = Immutable({
     counter: 0
 })
 
-export const helloWorld = (msg) =>
-    console.log("Olá mundo", msg)
+export const helloWorld = (state) =>{
+    console.log("Olá mundo")
+    return state.merge({hellowed:true})
+}
 
 export const increment = (state) =>
     state.merge({counter: state.counter + 1})
